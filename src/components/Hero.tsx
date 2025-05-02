@@ -14,54 +14,43 @@ export default function Hero() {
       className="relative min-h-screen bg-cover bg-center bg-no-repeat flex items-center"
       style={{ backgroundImage: "url('/bg2.jpg')" }}
     >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70 z-0" />
-
-      {/* Gradient bottom fade */}
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-70 z-0" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-0" />
 
-      {/* Wrapper: layout differs for mobile and desktop */}
-      <div className="relative z-10 w-full px-6 sm:px-8 md:px-20 max-w-7xl flex flex-col sm:flex-row sm:items-center sm:justify-start text-center sm:text-left">
-        <div className="w-full sm:max-w-2xl">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
-          >
-            We build immersive{" "}
-            <span className="whitespace-nowrap">architectural experiences.</span>
-          </motion.h1>
+      {/* Content */}
+      <div className="relative z-10 px-6 md:px-20 max-w-4xl">
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-[1.8rem] sm:text-[2rem] md:text-6xl font-bold text-white leading-[1.25] md:leading-[1.15] max-w-[95vw] md:max-w-3xl"
+        >
+          <span className="block md:hidden">
+            We build immersive<br />architectural experiences
+          </span>
+          <span className="hidden md:inline">
+            We build immersive architectural experiences
+          </span>
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mb-10"
-          >
-            We are the next-gen VR studio transforming real estate design into cinematic, walkable 3D worlds.
-          </motion.p>
+        <p className="mt-6 text-base md:text-xl text-gray-300 max-w-2xl">
+          We are the next-gen VR studio transforming real estate design into cinematic, walkable 3D worlds.
+        </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto"
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <a
+            href="#services"
+            className="px-6 py-3 rounded-full border border-white text-white font-medium text-center hover:bg-white hover:text-black transition"
           >
-            <a
-              href="#services"
-              className="w-full sm:w-auto px-8 py-3 border border-white text-white rounded-full text-base font-semibold hover:bg-white hover:text-black transition duration-300"
-            >
-              View Our Work
-            </a>
-
-            <a
-              href="#contact"
-              className="w-full sm:w-auto px-8 py-3 bg-[#F5B301] text-black font-semibold rounded-full text-base shadow hover:bg-[#e6a500] transition duration-300"
-            >
-              Get in Touch
-            </a>
-          </motion.div>
+            View Our Work
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold text-center hover:bg-yellow-500 transition"
+          >
+            Get in Touch
+          </a>
         </div>
       </div>
     </motion.section>
