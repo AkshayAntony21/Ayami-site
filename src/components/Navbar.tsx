@@ -39,7 +39,7 @@ export default function Navbar() {
     <header className="absolute top-0 left-0 w-full z-50 bg-transparent text-white">
       <nav className="w-full px-6 md:px-18 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center space-x-3 ml-0 pl-0">
+        <a href="#home" className="flex items-center space-x-3">
           <Image
             src="/logo3.png"
             alt="Ayami Logo"

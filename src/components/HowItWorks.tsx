@@ -24,11 +24,11 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative bg-cover bg-center bg-no-repeat py-32 px-8 md:px-24 text-white"
+      className="relative bg-cover bg-center bg-no-repeat py-24 px-6 sm:px-12 md:px-24 text-white"
       style={{ backgroundImage: "url('/bg1.jpg')" }}
     >
       {/* Background Overlays */}
-      <div className="absolute inset-0 bg-black opacity-60" />
+      <div className="absolute inset-0 bg-black/60" />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/30 to-black opacity-80" />
 
       {/* Content */}
@@ -38,12 +38,12 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-5xl md:text-6xl font-extrabold mb-24"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-20"
         >
           The <span className="text-[#00E0C6]">Process</span>
         </motion.h2>
 
-        <div className="grid gap-20 md:grid-cols-3 text-left text-xl leading-relaxed">
+        <div className="grid gap-16 sm:gap-20 sm:grid-cols-1 md:grid-cols-3 text-left text-base sm:text-lg leading-relaxed">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -51,13 +51,13 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="flex flex-col items-start space-y-6"
+              className="flex flex-col items-start space-y-4 sm:space-y-6"
             >
-              <div className="text-4xl font-bold text-[#00E0C6] opacity-90">{`0${idx + 1}`}</div>
-              <h3 className="text-2xl font-semibold text-white">{step.title}</h3>
-              <p className="text-lg md:text-xl text-gray-300 leading-loose">
-                {step.description}
-              </p>
+              <div className="text-3xl sm:text-4xl font-bold text-[#00E0C6] opacity-90">
+                {`0${idx + 1}`}
+              </div>
+              <h3 className="text-xl sm:text-2xl font-semibold">{step.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
         </div>

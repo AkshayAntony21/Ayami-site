@@ -33,19 +33,19 @@ const reasons = [
 
 const WhyChooseUs: React.FC = () => {
   return (
-    <section id="why" className="bg-[#040902] text-white py-32 px-6 md:px-16">
+    <section id="why" className="bg-[#040902] text-white py-24 px-6 sm:px-10 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-6xl font-extrabold mb-24"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-20"
         >
           Our <span className="text-[#00E0C6]">Edge</span>
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-16 text-left">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-2 text-left">
           {reasons.map((reason, idx) => (
             <motion.div
               key={idx}
@@ -53,7 +53,7 @@ const WhyChooseUs: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-[#1a1a1a]/60 backdrop-blur-md border border-[#2A2A2A] rounded-3xl p-10 shadow-md hover:shadow-lg transition-all duration-300 flex items-start gap-6"
+              className="bg-[#1a1a1a]/60 backdrop-blur-md border border-[#2A2A2A] rounded-3xl p-8 sm:p-10 shadow-md hover:shadow-lg transition-all duration-300 flex items-start gap-6"
             >
               <div className="flex-shrink-0 w-12 h-12 relative">
                 <Image
@@ -64,8 +64,8 @@ const WhyChooseUs: React.FC = () => {
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-white mb-2">{reason.title}</h3>
-                <p className="text-[#C0C0C0] text-lg md:text-xl leading-loose">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2">{reason.title}</h3>
+                <p className="text-[#C0C0C0] text-base sm:text-lg md:text-xl leading-relaxed">
                   {reason.description}
                 </p>
               </div>

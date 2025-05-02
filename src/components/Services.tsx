@@ -28,19 +28,20 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="py-48 px-6 bg-[#040902] text-white flex flex-col justify-center"
+      className="py-32 px-6 sm:px-10 bg-[#040902] text-white"
     >
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-5xl sm:text-6xl font-bold mb-20"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-20 leading-tight"
         >
           Experiences We Build
         </motion.h2>
 
-        <div className="grid gap-20 md:grid-cols-3 text-left">
+        <div className="grid gap-16 sm:gap-20 md:grid-cols-3 text-left">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -50,19 +51,19 @@ export default function Services() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
             >
-              <div className="mb-6 overflow-hidden rounded-xl">
+              <div className="mb-6 overflow-hidden rounded-2xl">
                 <Image
                   src={service.image}
                   alt={service.title}
                   width={500}
                   height={320}
-                  className="w-full h-56 aspect-[16/10] object-cover grayscale group-hover:grayscale-0 transition duration-300"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover grayscale group-hover:grayscale-0 transition duration-300"
                 />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-semibold mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
                 {service.title}
               </h3>
-              <p className="text-lg sm:text-xl text-gray-400 leading-loose">
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed">
                 {service.description}
               </p>
             </motion.div>
