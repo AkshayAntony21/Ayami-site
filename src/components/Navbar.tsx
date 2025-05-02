@@ -14,11 +14,13 @@ export default function Navbar() {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]");
       const scrollY = window.pageYOffset;
+
       sections.forEach((section) => {
-        const top = section.offsetTop - 120;
-        const height = section.offsetHeight;
+        const el = section as HTMLElement;
+        const top = el.offsetTop - 120;
+        const height = el.offsetHeight;
         if (scrollY >= top && scrollY < top + height) {
-          setActiveLink(section.getAttribute("id")!);
+          setActiveLink(el.getAttribute("id")!);
         }
       });
     };
@@ -35,7 +37,7 @@ export default function Navbar() {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 bg-transparent text-white">
-      <nav className="w-full px-6 md:px-17 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
+      <nav className="w-full px-6 md:px-18 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center space-x-3 ml-0 pl-0">
           <Image
