@@ -5,9 +5,7 @@ import {
   Instagram,
   Youtube,
   Facebook,
-  Linkedin,
   MessageCircle,
-  Twitter,
 } from "lucide-react";
 
 export default function Contact() {
