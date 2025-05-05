@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Mail,
   Instagram,
@@ -9,6 +10,14 @@ import {
 } from "lucide-react";
 
 export default function Contact() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent));
+    }
+  }, []);
+
   return (
     <section id="contact" className="bg-[#040902] py-24 px-6 text-white">
       <div className="max-w-4xl mx-auto text-center">
@@ -34,7 +43,11 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=projectayami@gmail.com"
+            href={
+              isMobile
+                ? "mailto:projectayami@gmail.com"
+                : "https://mail.google.com/mail/?view=cm&fs=1&to=projectayami@gmail.com"
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white hover:bg-gray-200 text-black px-6 py-4 text-base sm:text-lg rounded-lg transition"
@@ -45,13 +58,28 @@ export default function Contact() {
         </div>
 
         <div className="flex justify-center items-center gap-6">
-          <a href="https://www.instagram.com/ayamiprojects/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/ayamiprojects/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <Instagram className="w-6 h-6 sm:w-7 sm:h-7 hover:text-[#E1306C] transition" />
           </a>
-          <a href="https://www.youtube.com/@AyamiProjects" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <a
+            href="https://www.youtube.com/@AyamiProjects"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
             <Youtube className="w-6 h-6 sm:w-7 sm:h-7 hover:text-red-500 transition" />
           </a>
-          <a href="https://www.instagram.com/ayamiprojects/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a
+            href="https://www.facebook.com/ayamiprojects/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
             <Facebook className="w-6 h-6 sm:w-7 sm:h-7 hover:text-blue-500 transition" />
           </a>
         </div>
