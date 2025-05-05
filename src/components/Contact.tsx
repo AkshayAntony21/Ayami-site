@@ -34,7 +34,9 @@ export default function Contact() {
           </a>
 
           <a
-            href="mailto:projectayami@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=projectayami@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white hover:bg-gray-200 text-black px-6 py-4 text-base sm:text-lg rounded-lg transition"
           >
             <Mail size={24} />
